@@ -29,6 +29,12 @@ Plug('hrsh7th/vim-vsnip')
 -- coc
 Plug('neoclide/coc.nvim', {['branch']='release'})
 
+-- treesitter
+Plug('nvim-treesitter/nvim-treesitter')
+
+-- cs"'
+Plug('tpope/vim-surround')
+
 vim.call('plug#end')
 
 -- Color schemes should be loaded after plug#end().
