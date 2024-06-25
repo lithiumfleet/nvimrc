@@ -1,8 +1,11 @@
 -- For normal settings
 require('vimrc')
 
--- For Coc-nvim
-require('coc-config')
+-- Setup all plugins
+require('plugins-setup')
+
+-- For nvim-cmp
+require('cmp-config')
 
 -- For treesitter
 require('treesitter-config')
