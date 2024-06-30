@@ -30,6 +30,9 @@ Plug('tpope/vim-surround')
 -- background
 Plug('xiyaowong/transparent.nvim')
 
+-- auto brackets
+Plug('m4xshen/autoclose.nvim')
+
 vim.call('plug#end')
 
 -- Color schemes should be loaded after plug#end().

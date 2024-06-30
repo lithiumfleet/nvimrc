@@ -11,5 +11,14 @@ require('cmp-config')
 require('treesitter-config')
 require('nvim-treesitter.configs').setup{highlight={enable=true}}
 
--- For FZF
-vim.api.nvim_command('command! Open FZF')
+-- For fzf
+require('fzf-config')
+
+-- For autoclose
+require('autoclose-config')
+
+-- For custom command
+vim.api.nvim_create_user_command('Chbg', function()
+  vim.cmd('!powershell -Command chbg')
+end, {})
+
