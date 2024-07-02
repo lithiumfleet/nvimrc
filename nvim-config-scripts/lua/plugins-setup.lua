@@ -29,6 +29,8 @@ Plug('tpope/vim-surround')
 
 -- background
 Plug('xiyaowong/transparent.nvim')
+Plug('NLKNguyen/papercolor-theme')
+Plug('gregsexton/Atom')
 
 -- auto brackets
 Plug('m4xshen/autoclose.nvim')
