@@ -5,7 +5,7 @@ cmp.setup({
   snippet = {
     -- Use luasnip as the snippet engine
     expand = function(args)
-      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+      require('luasnip').lsp_expand(args.body)
     end,
   },
   window = {
@@ -16,21 +16,16 @@ cmp.setup({
     -- Key mappings for completion
     ['<Tab>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
     ['<S-Tab>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    }),
+    ['<C-j>'] = cmp.mapping.scroll_docs(-2),
+    ['<C-k>'] = cmp.mapping.scroll_docs(2),
   }),
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' }, -- For luasnip users.
-  }, {
-    { name = 'buffer' },
-  })
+  sources = cmp.config.sources(
+    { {name='nvim_lsp'},{name='luasnip'} }, 
+    { {name='buffer'} }
+  ),
+
+  -- For ghost completion (ide like)
+  experimental = { ghost_text = true }
 })
 
 -- Use buffer source for `/` and `?` in command-line mode
@@ -55,9 +50,11 @@ cmp.setup.cmdline(':', {
 -- Set up lspconfig with nvim-cmp capabilities for specific languages
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+local lspconfig = require('lspconfig')
+
 -- Configure LSP servers for Python, C/C++, Rust, and JavaScript
-require('lspconfig').pyright.setup { capabilities = capabilities }
-require('lspconfig').clangd.setup { capabilities = capabilities }
-require('lspconfig').rust_analyzer.setup { capabilities = capabilities }
-require('lspconfig').tsserver.setup { capabilities = capabilities }
+lspconfig.pyright.setup({ capabilities = capabilities })
+lspconfig.clangd.setup({ capabilities = capabilities })
+lspconfig.rust_analyzer.setup({ capabilities = capabilities })
+lspconfig.tsserver.setup({ capabilities = capabilities })
 

@@ -15,11 +15,10 @@ Plug('hrsh7th/cmp-buffer')
 Plug('hrsh7th/cmp-path')
 Plug('hrsh7th/cmp-cmdline')
 Plug('hrsh7th/nvim-cmp')
-Plug('hrsh7th/cmp-vsnip')
-Plug('hrsh7th/vim-vsnip')
 
--- coc
-Plug('neoclide/coc.nvim', {['branch']='release'})
+-- lua-snip
+Plug('L3MON4D3/LuaSnip')
+Plug('saadparwaiz1/cmp_luasnip')
 
 -- treesitter
 Plug('nvim-treesitter/nvim-treesitter')
