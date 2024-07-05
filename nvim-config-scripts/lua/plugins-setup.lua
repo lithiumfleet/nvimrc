@@ -34,6 +34,10 @@ Plug('gregsexton/Atom')
 -- auto brackets
 Plug('m4xshen/autoclose.nvim')
 
+-- file explorer
+Plug('stevearc/oil.nvim')
+
+
 vim.call('plug#end')
 
 -- Color schemes should be loaded after plug#end().
