@@ -16,8 +16,8 @@ cmp.setup({
     -- Key mappings for completion
     ['<Tab>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
     ['<S-Tab>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-    ['<C-j>'] = cmp.mapping.scroll_docs(-2),
-    ['<C-k>'] = cmp.mapping.scroll_docs(2),
+    ['<C-j>'] = cmp.mapping.scroll_docs(2),
+    ['<C-k>'] = cmp.mapping.scroll_docs(-2),
   }),
   sources = cmp.config.sources(
     { {name='nvim_lsp'},{name='luasnip'} }, 
