@@ -44,20 +44,26 @@ Plug('NStefan002/screenkey.nvim')
 -- status line
 Plug('freddiehaddad/feline.nvim')
 
+-- terminal plugin
+Plug('s1n7ax/nvim-terminal')
+
 vim.call('plug#end')
 
 -- Scripts loaded after plug#end().
 require('cmp-config')
 require('fzf-config')
 require('treesitter-config')
-require('autoclose-config')
 require('oil-config')
-require('feline').setup()
-require('vimrc') -- For normal settings
+require('feline-config')
+require('terminal-config')
+-- For normal settings
+require('vimrc')
+-- Some plugins are easy to setup
+require("autoclose").setup()
 
 -- auto run
 vim.cmd('silent! colorscheme tokyonight')
-vim.api.nvim_create_autocmd("VimEnter", {
-  pattern = "*",
-  command = "Screenkey toggle"
-})
+--vim.api.nvim_create_autocmd("VimEnter", {
+--  pattern = "*",
+--  command = "Screenkey toggle"
+--})
