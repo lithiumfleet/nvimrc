@@ -22,8 +22,3 @@ vim.api.nvim_set_keymap('n', '<C-Down>', '<cmd>resize +1<CR>', { noremap = true,
 vim.api.nvim_set_keymap('n', '<C-Left>', '<cmd>vertical resize -1<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-Right>', '<cmd>vertical resize +1<CR>', { noremap = true, silent = true })
 
--- For custom command
-vim.api.nvim_create_user_command('Chbg', function()
-  vim.cmd('!powershell -Command chbg')
-end, {})
-

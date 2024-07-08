@@ -47,6 +47,15 @@ Plug('freddiehaddad/feline.nvim')
 -- terminal plugin
 Plug('s1n7ax/nvim-terminal')
 
+-- auto tags
+Plug('windwp/nvim-ts-autotag')
+
+-- gd
+Plug('rmagatti/goto-preview')
+
+-- auto save
+Plug('Pocco81/auto-save.nvim')
+
 vim.call('plug#end')
 
 -- Scripts loaded after plug#end().
@@ -56,14 +65,12 @@ require('treesitter-config')
 require('oil-config')
 require('feline-config')
 require('terminal-config')
--- For normal settings
-require('vimrc')
+require('autotag-config')
+require('goto-preview-config')
+require('vimrc') -- For normal settings
 -- Some plugins are easy to setup
-require("autoclose").setup()
+require('autoclose').setup()
+require('auto-save').setup({ enabled = false })
 
 -- auto run
 vim.cmd('silent! colorscheme tokyonight')
---vim.api.nvim_create_autocmd("VimEnter", {
---  pattern = "*",
---  command = "Screenkey toggle"
---})
