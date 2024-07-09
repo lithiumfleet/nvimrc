@@ -48,13 +48,50 @@ cmp.setup.cmdline(':', {
 })
 
 -- Set up lspconfig with nvim-cmp capabilities for specific languages
+local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-local lspconfig = require('lspconfig')
-
--- Configure LSP servers for Python, C/C++, Rust, and JavaScript
+-- Configure LSP servers
 lspconfig.pyright.setup({ capabilities = capabilities })
 lspconfig.clangd.setup({ capabilities = capabilities })
 lspconfig.rust_analyzer.setup({ capabilities = capabilities })
 lspconfig.tsserver.setup({ capabilities = capabilities })
 
+-- HTML Language Server
+lspconfig.html.setup({
+  capabilities = capabilities,
+  cmd = {"vscode-html-language-server", "--stdio"},
+  filetypes = {"html"},
+  init_options = {
+    configurationSection = {"html", "css", "javascript"},
+    embeddedLanguages = {css = true, javascript = true}
+  },
+  settings = {},
+  single_file_support = true
+})
+
+-- CSS Language Server
+lspconfig.cssls.setup({
+  capabilities = capabilities,
+  cmd = {"vscode-css-language-server", "--stdio"},
+  filetypes = {"css"},
+  settings = {
+    css = {
+      validate = true
+    }
+  },
+  single_file_support = true
+})
+
+-- JSON Language Server
+lspconfig.jsonls.setup({
+  capabilities = capabilities,
+  cmd = {"vscode-json-language-server", "--stdio"},
+  filetypes = {"json"},
+  settings = {
+    json = {
+      validate = { enable = true }
+    }
+  },
+  single_file_support = true
+})
