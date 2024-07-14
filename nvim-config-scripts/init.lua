@@ -56,6 +56,9 @@ Plug('rmagatti/goto-preview')
 -- auto save
 Plug('Pocco81/auto-save.nvim')
 
+-- code format
+Plug('stevearc/conform.nvim')
+
 vim.call('plug#end')
 
 -- Scripts loaded after plug#end().
@@ -67,6 +70,7 @@ require('feline-config')
 require('terminal-config')
 require('autotag-config')
 require('goto-preview-config')
+require('formatter-config')
 require('vimrc') -- For normal settings
 -- Some plugins are easy to setup
 require('autoclose').setup()

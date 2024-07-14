@@ -22,3 +22,12 @@ vim.api.nvim_set_keymap('n', '<C-Down>', '<cmd>resize +1<CR>', { noremap = true,
 vim.api.nvim_set_keymap('n', '<C-Left>', '<cmd>vertical resize -1<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-Right>', '<cmd>vertical resize +1<CR>', { noremap = true, silent = true })
 
+-- enable lsp messages in insert mode
+vim.diagnostic.config({
+    virtual_text = true,
+    signs = true,
+    update_in_insert = true,
+    underline = true,
+    severity_sort = false,
+    float = true,
+  })
