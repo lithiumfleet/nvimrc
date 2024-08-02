@@ -42,7 +42,8 @@ Plug('stevearc/oil.nvim')
 Plug('NStefan002/screenkey.nvim')
 
 -- status line
-Plug('freddiehaddad/feline.nvim')
+Plug('nvim-lualine/lualine.nvim')
+Plug('nvim-tree/nvim-web-devicons')
 
 -- terminal plugin
 Plug('s1n7ax/nvim-terminal')
@@ -66,7 +67,7 @@ require('cmp-config')
 require('fzf-config')
 require('treesitter-config')
 require('oil-config')
-require('feline-config')
+require('lualine-config')
 require('terminal-config')
 require('autotag-config')
 require('goto-preview-config')

@@ -18,6 +18,7 @@ cmp.setup({
     ['<S-Tab>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
     ['<C-j>'] = cmp.mapping.scroll_docs(2),
     ['<C-k>'] = cmp.mapping.scroll_docs(-2),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
   }),
   sources = cmp.config.sources(
     { {name='nvim_lsp'},{name='luasnip'} }, 
