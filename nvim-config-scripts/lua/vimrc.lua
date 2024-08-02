@@ -5,6 +5,8 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.mouse = 'a'
 vim.opt.clipboard:append('unnamedplus') -- Use system clipboard
+vim.opt.encoding = 'utf-8'
+vim.opt.fileencodings = { 'utf-8', 'ucs-bom', 'gbk', 'cp936', 'gb2312', 'gb18030' }
 
 -- For block select
 vim.api.nvim_set_keymap('n', '<C-q>', '<C-v>', { noremap = true, silent = true }) -- <Ctrl-q> to visual block mode
@@ -31,6 +33,12 @@ vim.diagnostic.config({
     severity_sort = false,
     float = true,
   })
+
+-- cd desktop
+vim.api.nvim_command('command! Cddesktop cd C:/Users/Lithium/OneDrive/桌面')
+
+-- auto change director
+vim.opt.autochdir = true
 
 -- config for neovide
 if vim.g.neovide then

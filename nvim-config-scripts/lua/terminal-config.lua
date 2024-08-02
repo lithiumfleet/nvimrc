@@ -18,7 +18,7 @@ vim.o.hidden = true
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
 
 -- Chsh powershell
-vim.opt.shell = 'powershell -nologo'
+vim.opt.shell = 'pwsh -nologo'
 vim.opt.shellcmdflag = '-command'
 vim.opt.shellquote = '"'
 vim.opt.shellxquote = ''
